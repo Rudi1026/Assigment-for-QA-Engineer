@@ -25,8 +25,5 @@ def slurper = new JsonSlurper()
 Putupdate = WS.sendRequest(findTestObject('Object Repository/PUT Update'))
 
 def resPutupdate = slurper.parseText(Putupdate.getResponseBodyContent())
-println resPutupdate
-WS.verifyResponseStatusCode(Putupdate, 200)
 
-//WS.verifyEqual(resPutupdate.data[0].email,"george.bluth@reqres.in")
-//GlobalVariable.id= resPutupdate.data[1].id
+WS.verifyResponseStatusCode(Putupdate, 200)

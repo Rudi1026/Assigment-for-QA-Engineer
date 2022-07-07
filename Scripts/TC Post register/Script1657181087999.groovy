@@ -25,8 +25,5 @@ def slurper = new JsonSlurper()
 Postregister = WS.sendRequest(findTestObject('Object Repository/Post register'))
 
 def resPostregister = slurper.parseText(Postregister.getResponseBodyContent())
-println resPostregister
-WS.verifyResponseStatusCode(Postregister, 200)
 
-//WS.verifyEqual(resPutupdate.data[0].email,"george.bluth@reqres.in")
-//GlobalVariable.id= resPutupdate.data[1].id
+WS.verifyResponseStatusCode(Postregister, 200)

@@ -25,8 +25,8 @@ def slurper = new JsonSlurper()
 Listusers = WS.sendRequest(findTestObject('Object Repository/GET List users'))
 
 def resListusers = slurper.parseText(Listusers.getResponseBodyContent())
-println resListusers.total
+
 WS.verifyResponseStatusCode(Listusers, 200)
 
 WS.verifyEqual(resListusers.data[0].email,"george.bluth@reqres.in")
-GlobalVariable.id= resListusers.data[1].id
+GlobalVariable.id= resListusers.data[0].id
